@@ -10,10 +10,10 @@ import SVG from '../components/SVG'
 const Projects = ({ children, offset }) => (
   <>
     <DividerMiddle
-      bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
+      bg="linear-gradient(to right, #292E49 0%, #536976 100%)"
       speed={-0.2}
       offset={`${offset}.1`}
-      factor={2}
+      factor={1.5}
     />
     <Content speed={0.4} offset={`${offset}.2`} factor={2}>
       <Inner>{children}</Inner>
@@ -34,7 +34,7 @@ const Projects = ({ children, offset }) => (
         <SVG icon="upDown" hiddenMobile width={8} fill={colors.green} left="45%" top="10%" />
       </UpDownWide>
       <SVG icon="circle" width={6} fill={colors.white} left="4%" top="20%" />
-      <SVG icon="circle" width={12} fill={colors.pink} left="80%" top="60%" />
+      <SVG icon="circle" width={12} fill={colors.purple} left="80%" top="60%" />
       <SVG icon="box" width={6} fill={colors.orange} left="10%" top="10%" />
       <SVG icon="box" width={12} fill={colors.yellow} left="29%" top="26%" />
       <SVG icon="hexa" width={16} stroke={colors.red} left="75%" top="30%" />

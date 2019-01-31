@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
-import { Parallax } from 'react-spring/addons.cjs'
+import { Parallax, ParallaxLayer } from 'react-spring/addons.cjs'
+
 
 // Components
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
+import BackEndCard from '../components/BackEndCard'
+
 
 // Elements
 import Inner from '../elements/Inner'
@@ -16,8 +19,10 @@ import Hero from '../views/Hero'
 import Projects from '../views/Projects'
 import About from '../views/About'
 import Contact from '../views/Contact'
-
+import Skills from '../views/skills'
+import FrontEndCard from '../components/FrontEndCard'
 import avatar from '../images/avatar.jpg'
+
 
 const ProjectsWrapper = styled.div`
   ${tw`flex flex-wrap justify-between mt-8`};
@@ -35,6 +40,9 @@ const ProjectsWrapper = styled.div`
 
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
+`
+const SkillsHero = styled.div`
+  ${tw`flex lg:flex-row justify-between items-center mt-8`};
 `
 
 const Avatar = styled.img`
@@ -56,84 +64,112 @@ const ContactText = styled.p`
 const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
 `
+const MenuButton = styled.button`
+    border: none;
+    background-color: pink;
+    ${tw` text-lg color-white w-64 rounded`}
+`
 
-const Index = () => (
-  <>
-    <Layout />
-    <Parallax pages={5}>
-      <Hero offset={0}>
-        <BigTitle>
-          Hello, <br /> I'm John Doe.
-        </BigTitle>
-        <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
-      </Hero>
-      <Projects offset={1}>
-        <Title>Projects</Title>
-        <ProjectsWrapper>
-          <ProjectCard
-            title="Freiheit"
-            link="https://www.behance.net/gallery/58937147/Freiheit"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-          >
-            This project is my entry to Adobe's #ChallengeYourPerspective contest.
-          </ProjectCard>
-          <ProjectCard
-            title="Harry Potter"
-            link="https://www.behance.net/gallery/52915793/Harry-Potter"
-            bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
-          >
-            I entered the DOCMA 2017 award with this Harry Potter inspired image.
-          </ProjectCard>
-          <ProjectCard
-            title="Tomb Raider"
-            link="https://www.behance.net/gallery/43907099/Tomb-Raider"
-            bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
-          >
-            Recreation of a Tomb Raider Wallpaper (Fan Art)
-          </ProjectCard>
-          <ProjectCard
-            title="Eagle"
-            link="https://www.behance.net/gallery/38068151/Eagle"
-            bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
-          >
-            A fantasy image manipulation relocating the habitat of wild animals.
-          </ProjectCard>
-        </ProjectsWrapper>
-      </Projects>
-      <About offset={3}>
-        <Title>About</Title>
-        <AboutHero>
-          <Avatar src={avatar} alt="John Doe" />
-          <AboutSub>
-            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
-          </AboutSub>
-        </AboutHero>
-        <AboutDesc>
-          You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
-          every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
-          make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The kids
-          want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that all
-          right?
-        </AboutDesc>
-      </About>
-      <Contact offset={4}>
-        <Inner>
-          <Title>Get in touch</Title>
-          <ContactText>
-            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
-            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
-          </ContactText>
-        </Inner>
-        <Footer>
-          &copy; 2019 by Gatsby Starter Portfolio Cara.{' '}
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">Github Repository</a>. Made by{' '}
-          <a href="https://www.lekoarts.de">LekoArts</a>.
-        </Footer>
-      </Contact>
-    </Parallax>
-  </>
-)
+class Index extends Component {
+
+
+
+  render(){
+
+    return(
+      <>
+      <Layout/>
+      <Parallax  ref={ref => (this.parallax = ref)} pages={6}>
+        <Hero id="hero" offset={0}>
+        <button onClick={() => this.parallax.scrollTo(1)} >click</button>
+
+          <BigTitle>
+            Hello, <br /> I'm Craig Stevens.
+          </BigTitle>
+
+
+          <Subtitle>Full stack web developer.</Subtitle>
+        </Hero>
+
+        <About offset={1}>
+        <button onClick={() => this.parallax.scrollTo(2)} >click</button>
+          <Title>About</Title>
+
+          <AboutHero>
+            <Avatar src={avatar} alt="Craig Stevens" />
+            <AboutSub>
+            Professional with a coding habit.
+            </AboutSub>
+          </AboutHero>
+          <AboutDesc id='about'>
+          Out of curiosity I started learning about coding, I began with Harvard X's  CS50 Introduction To Computer Science course. Upon completion I was fully enveloped by software, which led me to quit my job of 13 years. Up to that point I was learning as much as possible in my free time and soon realized that I wanted to do this for a living. In order for that to become reality I knew it would take a full-time commitment. Thus, I decided to apply at DevMountain, an immersive web development bootcamp. As a result, the rest is history.
+          </AboutDesc>
+        </About>
+
+
+
+        <Projects   offset={2}>
+        <button onClick={() => this.parallax.scrollTo(0)} >click</button>
+
+          <Title >Projects</Title>
+
+
+          <ProjectsWrapper>
+
+            <ProjectCard
+              title="Footprint"
+              link="/footprint"
+              bg="linear-gradient(to right, #52c234 0%, #061700 100%)"
+              >
+                Footprint, a recyling information based web application.
+            </ProjectCard>
+
+          </ProjectsWrapper>
+        </Projects>
+
+
+
+
+        <Skills offset={4}>
+
+          <Title>Skills</Title>
+          <SkillsHero>
+        <button onClick={() => this.parallax.scrollTo(5)} >click</button>
+            <FrontEndCard
+            title='Front-end Development'
+            bg="linear-gradient(to right, #232526 0%, #414345 100%)"
+            >
+            I take pride in writing organized and succinct code when building front-end applications and websites. I specialize in React with Redux. I also program in vanilla JavaScript, HTML5, and CSS3.
+            </FrontEndCard>
+            <BackEndCard
+            title='Back-end Development'
+            bg="linear-gradient(to right, #8e9eab 0%, #eef2f3 100%)"
+            >
+           I use Nodejs enviroments. Commonly using Express, PostgresSQL, Massive, Bcrypt, RESTful APIs, and more. I also incorporate unit & endpoint testing along with version control.  My tools of choice are Git, Jest, and Postman.
+            </BackEndCard>
+
+          </SkillsHero>
+
+        </Skills>
+
+        <Contact offset={5}>
+          <Inner>
+        <button onClick={() => this.parallax.scrollTo(0)} >click</button>
+            <Title>Get in touch</Title>
+            <ContactText id="projects">
+              Contact me  via <a href="mailto:craigstevens044@gmail.com">Email,</a> {' '}
+              <a href="https://linkedin.com/in/craig-stevens-044/">  Linkedin</a> or{' '}
+              <a href="https://github.com/Csteves">Github.</a>
+            </ContactText>
+          </Inner>
+          <Footer>
+          </Footer>
+        </Contact>
+      </Parallax>
+    </>
+    )
+  }
+
+}
 
 export default Index
