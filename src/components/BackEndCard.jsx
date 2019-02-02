@@ -11,21 +11,23 @@ import postman from '../../static/icons/postman.svg'
 import express from '../../static/icons/expressjslogo.png'
 import massive from '../../static/icons/massive-title.jpg'
 
-
-
-
-
-
 const Wrapper = styled.div`
   width: 350px;
   height:450px;
   min-width:350px;
+  margin: 10px 10px 10px 20px;
   ${tw`shadow-lg relative rounded-lg text-white`};
   background: ${props => props.bg};
-  display:flex:
+  display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   text-align: center;
+  @media(max-width:800px){
+    margin:30px 0;
+  }
+  @media(min-width:900px){
+    margin-left:15%;
+  }
 `
 
 const Text = styled.div`

@@ -37,12 +37,87 @@ const ProjectsWrapper = styled.div`
     grid-gap: 2rem;
   }
 `
+const NavToolbar = styled.div`
+position:fixed;
+top:30px;
+right:40px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+padding:5px;
+z-index:1000;
+height:80px;
+width:80px;
+border-radius:15%;
+background-color:#ffffff;
+overflow:hidden;
+/* transition-delay: 0.2s; */
+transition-property:height;
+transition-timing-function: steps(4,end);
+transition-duration: .3s;
+&:hover{
+  & span{
+    height:300px;
+    background-color:inherit;
+  }
+  & button{
+    display:inline;
+    height:85px;
+    width:85px;
+    transition: all 0.5s ease-out ;
+  }
+  background-color:inherit;
+  justify-content:flex-start;
+  height:380px;
+  width:100px;
+  border-radius:0;
+  transition: all 0.3s ease-out;
+}
+@media(max-width:600px){
+  display:none;
+}
+`
+const Bar = styled.span`
+ display: block;
+  height: 10px;
+  width: 100%;
+  background: #333;
+  border-radius: 9px;
+  opacity: 1;
+  left: 7px;
+  transition: all 0.1s ease-in;
+
+`
+const NavButton = styled.button`
+height:0;
+width:0;
+border: 2px solid #ffffff;
+outline:transparent;
+font-size:1.2em;
+line-height:80px;
+background-color:#161719;
+display:none;
+border-radius: 50%;
+margin:5px;
+color:#ffffff;
+text-align:center;
+text-decoration:none;
+box-shadow: 0 0 3px gray;
+transition: all 0.3s ease-in;
+&:hover{
+  transform:translateY(-1px)
+}
+`
 
 const AboutHero = styled.div`
   ${tw`flex flex-col lg:flex-row items-center mt-8`};
 `
 const SkillsHero = styled.div`
-  ${tw`flex lg:flex-row justify-between items-center mt-8`};
+  ${tw`flex lg:flex-row  justify-center items-center  mt-8`};
+ @media(max-width:800px){
+   flex-direction:column;
+   justify-content:center;
+ }
 `
 
 const Avatar = styled.img`
@@ -79,22 +154,39 @@ class Index extends Component {
     return(
       <>
       <Layout/>
+      <NavToolbar>
+          <Bar>
+        <NavButton
+        onClick={() => this.parallax.scrollTo(1)}
+        color={'burlywood'} >About</NavButton>
+          </Bar>
+          <Bar>
+            <NavButton
+            onClick={() => this.parallax.scrollTo(2.5)}
+            color={'burlywood'} >Projects</NavButton>
+          </Bar>
+          <Bar>
+            <NavButton
+            onClick={() => this.parallax.scrollTo(4)}
+            color={'burlywood'} >Skills</NavButton>
+          </Bar>
+          <Bar>
+            <NavButton
+            onClick={() => this.parallax.scrollTo(5)}
+            color={'burlywood'} >Contact</NavButton>
+          </Bar>
+      </NavToolbar>
+
       <Parallax  ref={ref => (this.parallax = ref)} pages={6}>
         <Hero id="hero" offset={0}>
-        <button onClick={() => this.parallax.scrollTo(1)} >click</button>
-
           <BigTitle>
             Hello, <br /> I'm Craig Stevens.
           </BigTitle>
-
-
           <Subtitle>Full stack web developer.</Subtitle>
         </Hero>
 
         <About offset={1}>
-        <button onClick={() => this.parallax.scrollTo(2)} >click</button>
           <Title>About</Title>
-
           <AboutHero>
             <Avatar src={avatar} alt="Craig Stevens" />
             <AboutSub>
@@ -106,55 +198,47 @@ class Index extends Component {
           </AboutDesc>
         </About>
 
-
-
-        <Projects   offset={2}>
-        <button onClick={() => this.parallax.scrollTo(0)} >click</button>
-
-          <Title >Projects</Title>
-
-
+        <Projects offset={2} >
+          <Title offset={2.5} >Projects</Title>
           <ProjectsWrapper>
-
             <ProjectCard
               title="Footprint"
               link="/footprint"
               bg="linear-gradient(to right, #52c234 0%, #061700 100%)"
               >
-                Footprint, a recyling information based web application.
+                A recyling information web application.
+            </ProjectCard>
+            <ProjectCard
+              title="Seeds Of Success"
+              link="/seeds"
+              bg="linear-gradient(to right, #F0CB35 0%, #C02425 100%)"
+              >
+                A garden planning web application.
             </ProjectCard>
 
           </ProjectsWrapper>
         </Projects>
 
-
-
-
         <Skills offset={4}>
-
           <Title>Skills</Title>
           <SkillsHero>
-        <button onClick={() => this.parallax.scrollTo(5)} >click</button>
             <FrontEndCard
             title='Front-end Development'
             bg="linear-gradient(to right, #232526 0%, #414345 100%)"
             >
-            I take pride in writing organized and succinct code when building front-end applications and websites. I specialize in React with Redux. I also program in vanilla JavaScript, HTML5, and CSS3.
+            I take pride in building front-end applications and websites. I love JavaScript, and specialize in React with Redux. I have been using Gatsby along with Styled Components to build template sites, also Know HTML5 and CSS3.
             </FrontEndCard>
             <BackEndCard
             title='Back-end Development'
             bg="linear-gradient(to right, #8e9eab 0%, #eef2f3 100%)"
             >
-           I use Nodejs enviroments. Commonly using Express, PostgresSQL, Massive, Bcrypt, RESTful APIs, and more. I also incorporate unit & endpoint testing along with version control.  My tools of choice are Git, Jest, and Postman.
+           I'm Experienced with Node.js enviroments. Commonly using Express, PostgresSQL, Massive, RESTful APIs, authentication and more. I also incorporate unit & endpoint testing along with version control using Git, Jest, and Postman.
             </BackEndCard>
-
           </SkillsHero>
-
         </Skills>
 
         <Contact offset={5}>
           <Inner>
-        <button onClick={() => this.parallax.scrollTo(0)} >click</button>
             <Title>Get in touch</Title>
             <ContactText id="projects">
               Contact me  via <a href="mailto:craigstevens044@gmail.com">Email,</a> {' '}
@@ -171,5 +255,6 @@ class Index extends Component {
   }
 
 }
+
 
 export default Index

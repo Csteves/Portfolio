@@ -12,12 +12,10 @@ const Wrapper = styled.a`
     transform: translateY(-5px);
   }
 `
-
 const Text = styled.div`
   ${tw`opacity-75 font-sans text-base md:text-base`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 `
-
 const Title = styled.div`
   ${tw`text-white uppercase text-2xl md:text-3xl xl:text-4xl tracking-wide font-sans pt-8`};
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -25,8 +23,8 @@ const Title = styled.div`
 
 const ProjectCard = ({ title, link, children, bg }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
-    <Text>{children}</Text>
     <Title>{title}</Title>
+    <Text>{children}</Text>
   </Wrapper>
 )
 

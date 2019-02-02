@@ -9,18 +9,19 @@ import html from '../../static/icons/html-5.svg'
 import react from '../../static/icons/React.js.svg'
 import redux from '../../static/icons/redux.svg'
 import gatsby from '../../static/icons/gatsby.svg'
-import styledComp from '../../static/icons/styled-comp.png'
+import styledComp from '../../static/icons/styled.png'
 
 
 const Wrapper = styled.div`
   width: 350px;
   height:450px;
   min-width:350px;
+  margin:0px 15px 0px 10px;
   ${tw`shadow-lg relative rounded-lg text-white`};
   background: ${props => props.bg};
-  display:flex:
+  display:flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap:wrap;
   text-align: center;
 `
@@ -55,6 +56,10 @@ const SkillWrap = styled.div`
   margin-bottom:10px;
 
 `
+const StyledComp = styled.img`
+${tw`square-full w-16 xl:w-16  h-auto`};
+margin:5px;
+`
 
 const FrontEndCard = ({ title, link, children, bg }) => (
   <Wrapper bg={bg}>
@@ -71,16 +76,16 @@ const FrontEndCard = ({ title, link, children, bg }) => (
             <Skill src={redux}/>
         </SkillWrap>
         <SkillWrap>
+            <Skill src={gatsby}/>
+        </SkillWrap>
+        <SkillWrap>
+            <StyledComp src={styledComp}/>
+        </SkillWrap>
+        <SkillWrap>
             <Skill src={html}/>
         </SkillWrap>
         <SkillWrap>
             <Skill src={css}/>
-        </SkillWrap>
-        <SkillWrap>
-            <Skill src={gatsby}/>
-        </SkillWrap>
-        <SkillWrap>
-            <Skill src={styledComp}/>
         </SkillWrap>
     </SkillsWrapper>
   </Wrapper>
