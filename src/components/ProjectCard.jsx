@@ -32,7 +32,7 @@ const Logo = styled.img`
 const ProjectCard = ({ title, link, children, bg,color,logo }) => (
   <Wrapper href={link} target="_blank" rel="noopener noreferrer" bg={bg}>
     <Title color={color}><Logo src={logo ? logo : null} />{title}</Title>
-    <Text color={color} >{children}</Text>
+    <Text color={color}>{children}</Text>
   </Wrapper>
 )
 

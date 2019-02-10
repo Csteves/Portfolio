@@ -223,9 +223,12 @@ class Index extends Component {
               bg="linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);;"
               color={'#558B2F'}
               >
-                Seeds Of Success
-                <br/>
-                An Application Providing Gardening Information With Visual Garden Planning.
+                <p>
+                  Seeds Of Success
+                  <br/>
+                  An Application Providing Gardening Information With Visual Garden Planning.
+                </p>
+
             </ProjectCard>
           </ProjectsWrapper>
         </Projects>
