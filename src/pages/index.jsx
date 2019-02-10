@@ -189,7 +189,7 @@ class Index extends Component {
           <BigTitle>
             Hello, <br /> I'm Craig Stevens.
           </BigTitle>
-          <Subtitle>Full stack web developer.</Subtitle>
+          <Subtitle>Full stack web developer</Subtitle>
         </Hero>
 
         <About offset={1}>

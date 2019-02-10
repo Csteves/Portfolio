@@ -47,7 +47,7 @@ const footprint = () =>{
                     <a href="https://foot-print.net">VIEW LIVE</a>
                     <a href="https://github.com/seeds-of-success-1/seeds-of-success">GITHUB</a>
                 </Links>
-                <Subtitle>For this project I wanted to contribute to someting that was meaningfull to me. Having worked in the recycling industry, I realized that proper recyling information is not very abundant. So I decidecd to make a web application that would provide the proper information to users.</Subtitle>
+                <Subtitle>Garden planning application allowing users to design gardens and specify which type of plants they would like to plant while providing gardening related information for each of the provided plant species.</Subtitle>
 
                 </Hero>
                 <About offset={1}>
@@ -55,14 +55,14 @@ const footprint = () =>{
                 <AboutDesc id='about'>
                 <ul>
                     <TechItem>
-                        Full CRUD application, using an Express server along with Massive to query an SQL database.
+                        Full CRUD application providing gardening Information with visual garden planning
                     </TechItem>
                     <TechItem>
-                        Utilized authentication as well as sessions to allow users and companies to register and navigate securely.
+                        RESTful API to allow the client side to interact with the server America to provide recycling solutions to users.
                     </TechItem>
 
                     <TechItem>
-                        Took advantage of React's library to create a dynamic, high performing user interface.
+                        Utilized authentication as well as sessions to allow users to register and navigate securely.
                     </TechItem>
 
                     <TechItem>
@@ -70,7 +70,7 @@ const footprint = () =>{
                     </TechItem>
 
                     <TechItem>
-                        Used Earth911's API to connect with thier database, Containing to most recyling related data in the USA.
+                        Created a virtual garden planner using React and CSS grid.
                     </TechItem>
 
                     <TechItem>
@@ -78,11 +78,11 @@ const footprint = () =>{
                     </TechItem>
 
                     <TechItem>
-                        Implemented an Admin route along with NodeMailer to allow privileged users to send email to  registered users and update market prices for lucrative recyclables.
+                        Modulized styles by using Styled Components
                     </TechItem>
 
                     <TechItem>
-                        Parsed RSS feeds for recyling related news articles.
+                        Implemented unit and endpoint testing
                     </TechItem>
                 </ul>
                  </AboutDesc>

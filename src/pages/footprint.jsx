@@ -66,14 +66,14 @@ const footprint = () =>{
                     <a href="https://github.com/Csteves/Footprint">GITHUB</a>
                 </Links>
 
-                <Subtitle>For this project I wanted to contribute to someting that was meaningfull to me. Having worked in the recycling industry, I realized that proper recyling information is not very abundant. So I decided to make a web application that would provide the proper information to users.</Subtitle>
+                <Subtitle>For this project, I wanted to contribute to something that was meaningful to me. Having worked in the recycling industry, I realized that recycling information is not very abundant. Therefore I decided to make an application that would provide solutions on where and how to recycle.</Subtitle>
                 </Hero>
                 <About offset={1}>
                 <Title>Tech</Title>
                 <AboutDesc id='about'>
                 <ul>
                     <TechItem>
-                        Full CRUD application, using an Express server along with Massive to query an SQL database.
+                        Full CRUD application following RESTful standards, using an Express server along with Massive to query PostgreSQL database.
                     </TechItem>
                     <TechItem>
                         Utilized authentication as well as sessions to allow users and companies to register and navigate securely.
@@ -84,23 +84,23 @@ const footprint = () =>{
                     </TechItem>
 
                     <TechItem>
-                        Used Redux to aid in global state management, and handle asynchronous HTTP requests.
+                        Used Redux for global state management, and handling asynchronous HTTP requests.
                     </TechItem>
 
                     <TechItem>
-                        Used Earth911's API to connect with thier database, Containing to most recyling related data in the USA.
+                        Used Earth911's API, providing a vast amount of comprehensive recycling related data.
                     </TechItem>
 
                     <TechItem>
-                        Integrated Google Maps and Google Geocoding API's pared with recycling information to allow users to find recycling locations accepting specified materials near them.
+                        Integrated Google Maps and Google Geocoding API's paired with recycling information to allow users to find recycling locations accepting specified materials near them.
                     </TechItem>
 
                     <TechItem>
-                        Implemented an Admin route along with NodeMailer to allow privileged users to send email to  registered users and update market prices for lucrative recyclables.
+                        Implemented an Admin route along with NodeMailer to allow privileged users to send email to registered users and update market prices for lucrative recyclables.
                     </TechItem>
 
                     <TechItem>
-                        Parsed RSS feeds for recyling related news articles.
+                        Parsed RSS feeds for recycling-related news articles.
                     </TechItem>
                 </ul>
                  </AboutDesc>
