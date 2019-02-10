@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
-import { Parallax, ParallaxLayer } from 'react-spring/addons.cjs'
-import { UpDown, UpDownWide } from '../styles/animations'
+import { Parallax} from 'react-spring/addons.cjs'
+import { UpDown} from '../styles/animations'
 
 
 // Components
