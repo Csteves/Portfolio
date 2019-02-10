@@ -242,13 +242,13 @@ class Index extends Component {
             title='Front-end Development'
             bg="linear-gradient(to right, #232526 0%, #414345 100%)"
             >
-            I take pride in building front-end applications and websites. I love JavaScript, and specialize in React with Redux. I have been using Gatsby along with Styled Components to build template sites, also Know HTML5 and CSS3.
+            I take pride in building front-end applications and websites. I love JavaScript and specialize in React with Redux. I have been using Gatsby along with Styled Components to build template sites, also know HTML5 and CSS3.
             </FrontEndCard>
             <BackEndCard
             title='Back-end Development'
             bg="linear-gradient(to right, #8e9eab 0%, #eef2f3 100%)"
             >
-           I'm Experienced with Node.js enviroments. Commonly using Express, PostgresSQL, Massive, RESTful APIs, authentication and more. I also incorporate unit & endpoint testing along with version control using Git, Jest, and Postman.
+            Experienced in Node.js environments. Commonly using Express, PostgreSQL, Massive, RESTful APIs, and authentication. I also incorporate unit and endpoint testing along with version control, using Git, Jest, and Postman.
             </BackEndCard>
           </SkillsHero>
         </Skills>
