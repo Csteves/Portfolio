@@ -24,7 +24,7 @@ const Title = styled.div`
   color: ${props => props.color};
 `
 const Logo = styled.img`
-  ${tw`  md:w-8 lg:w-12 xl:w-16  `}
+  ${tw`  w-10 md:w-12 lg:w-12 xl:w-16  `}
   position:relative;
   top:8px;
 `
