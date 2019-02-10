@@ -198,7 +198,7 @@ class Index extends Component {
           <AboutHero>
             <Avatar src={avatar} alt="Craig Stevens" />
             <AboutSub>
-            Currently Developing web applications, passionate about finding solutions to problems while creating elagant user facing products.
+            Currently Developing web applications, passionate about finding solutions to problems while creating elegant user facing products.
             </AboutSub>
           </AboutHero>
           <AboutDesc id='about'>
