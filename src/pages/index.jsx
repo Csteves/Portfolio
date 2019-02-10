@@ -15,6 +15,7 @@ import BackEndCard from '../components/BackEndCard'
 import Inner from '../elements/Inner'
 import { Title, BigTitle, Subtitle } from '../elements/Titles'
 import recycle from '../../static/icons/rec.svg'
+import garden from '../../static/icons/gardenLogo.svg'
 
 // Views
 import Hero from '../views/Hero'
@@ -211,7 +212,7 @@ class Index extends Component {
             <ProjectCard
               title="Footprint"
               link="/footprint"
-              bg="linear-gradient(to right, #f5f7fa 0%, #c3cfe2 100%);"
+              bg="linear-gradient(to right, #f5f7fa 0%, #c3cfe2 100%)"
               logo={recycle}
               color={'#e07628'}
               >
@@ -220,7 +221,8 @@ class Index extends Component {
             <ProjectCard
               title="S.O.S"
               link="/seeds"
-              bg="linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);;"
+              bg="linear-gradient(to top, #c1dfc4 0%, #deecdd 100%)"
+              logo={garden}
               color={'#558B2F'}
               >
                 <p>
