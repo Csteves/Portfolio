@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax, ParallaxLayer } from 'react-spring/addons.cjs'
+import { UpDown, UpDownWide } from '../styles/animations'
 
 
 // Components
@@ -13,6 +14,7 @@ import BackEndCard from '../components/BackEndCard'
 // Elements
 import Inner from '../elements/Inner'
 import { Title, BigTitle, Subtitle } from '../elements/Titles'
+import recycle from '../../static/icons/rec.svg'
 
 // Views
 import Hero from '../views/Hero'
@@ -37,10 +39,11 @@ const ProjectsWrapper = styled.div`
     grid-gap: 2rem;
   }
 `
-const NavToolbar = styled.div`
+const NavToolbar = styled(UpDown)`
 position:fixed;
-top:30px;
-right:40px;
+top:30px ;
+right:40px ;
+margin-left:auto;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
@@ -49,26 +52,31 @@ z-index:1000;
 height:80px;
 width:80px;
 border-radius:15%;
-background-color:#ffffff;
+/* background-color:#ffffff; */
+background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 overflow:hidden;
-/* transition-delay: 0.2s; */
-transition-property:height;
-transition-timing-function: steps(4,end);
+transition-property:all;
+transition-timing-function: ease;
 transition-duration: .3s;
 &:hover{
   & span{
     height:300px;
+    width:0;
     background-color:inherit;
   }
   & button{
     display:inline;
+    opacity:1;
     height:85px;
     width:85px;
-    transition: all 0.5s ease-out ;
+    color:#f6d365;
+    border: 2px solid #fda085 ;
+    transition: all 0.3s ease-out ;
   }
   background-color:inherit;
+  background-image:none;
   justify-content:flex-start;
-  height:380px;
+  height:390px;
   width:100px;
   border-radius:0;
   transition: all 0.3s ease-out;
@@ -85,27 +93,26 @@ const Bar = styled.span`
   border-radius: 9px;
   opacity: 1;
   left: 7px;
-  transition: all 0.1s ease-in;
-
+  transition: all 0.1s ease-in ;
+  transition:width 0.5s ease-out .1s;
 `
 const NavButton = styled.button`
 height:0;
 width:0;
-border: 2px solid #ffffff;
+border:black;
 outline:transparent;
 font-size:1.2em;
 line-height:80px;
-background-color:#161719;
-display:none;
+background-color:inherit;
+opacity:0;
 border-radius: 50%;
 margin:5px;
-color:#ffffff;
+color:black;
 text-align:center;
 text-decoration:none;
 box-shadow: 0 0 3px gray;
-transition: all 0.3s ease-in;
 &:hover{
-  transform:translateY(-1px)
+  transform:scale(1.1)
 }
 `
 
@@ -139,11 +146,8 @@ const ContactText = styled.p`
 const Footer = styled.footer`
   ${tw`text-center text-grey absolute pin-b p-6 font-sans text-md lg:text-lg`};
 `
-const MenuButton = styled.button`
-    border: none;
-    background-color: pink;
-    ${tw` text-lg color-white w-64 rounded`}
-`
+
+
 
 class Index extends Component {
 
@@ -154,6 +158,7 @@ class Index extends Component {
     return(
       <>
       <Layout/>
+
       <NavToolbar>
           <Bar>
         <NavButton
@@ -177,6 +182,8 @@ class Index extends Component {
           </Bar>
       </NavToolbar>
 
+
+
       <Parallax  ref={ref => (this.parallax = ref)} pages={6}>
         <Hero id="hero" offset={0}>
           <BigTitle>
@@ -190,11 +197,11 @@ class Index extends Component {
           <AboutHero>
             <Avatar src={avatar} alt="Craig Stevens" />
             <AboutSub>
-            Professional with a coding habit.
+            Currently Developing web applications, passionate about finding solutions to problems while creating elagant user facing products.
             </AboutSub>
           </AboutHero>
           <AboutDesc id='about'>
-          Out of curiosity I started learning about coding, I began with Harvard X's  CS50 Introduction To Computer Science course. Upon completion I was fully enveloped by software, which led me to quit my job of 13 years. Up to that point I was learning as much as possible in my free time and soon realized that I wanted to do this for a living. In order for that to become reality I knew it would take a full-time commitment. Thus, I decided to apply at DevMountain, an immersive web development bootcamp. As a result, the rest is history.
+          I got introduced to software out of curiosity, shortly after that I realized that I was completely intrigued by software. As a result, I took a chance to further develop myself in this area and made a major change in my life to pursue coding. I left my fulltime job of 13 years to attend DevMountain, an immersive web development boot camp. I’m constantly striving to learn new things and improve in this area. With my free time, I enjoy tinkering with new technologies and reading industry related news, blogs, or books.
           </AboutDesc>
         </About>
 
@@ -204,18 +211,22 @@ class Index extends Component {
             <ProjectCard
               title="Footprint"
               link="/footprint"
-              bg="linear-gradient(to right, #52c234 0%, #061700 100%)"
+              bg="linear-gradient(to right, #f5f7fa 0%, #c3cfe2 100%);"
+              logo={recycle}
+              color={'#e07628'}
               >
-                A recyling information web application.
+                A Recyling Information Web Application.
             </ProjectCard>
             <ProjectCard
-              title="Seeds Of Success"
+              title="S.O.S"
               link="/seeds"
-              bg="linear-gradient(to right, #F0CB35 0%, #C02425 100%)"
+              bg="linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);;"
+              color={'#558B2F'}
               >
-                A garden planning web application.
+                Seeds Of Success
+                <br/>
+                An Application Providing Gardening Information With Visual Garden Planning.
             </ProjectCard>
-
           </ProjectsWrapper>
         </Projects>
 

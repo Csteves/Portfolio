@@ -6,7 +6,7 @@ import About from '../views/About'
 
 import Layout from '../components/Layout'
 import Hero from '../views/Foot'
-import ProjectCard from '../components/ProjectCard'
+import Slider from '../components/Slider';
 import Projects from '../views/Projects'
 import landing from '../images/landing.png'
 import how from '../images/how.png'
@@ -16,16 +16,13 @@ import where from '../images/where.png'
 import { Title, Subtitle } from '../elements/Titles'
 
 
-
-const AboutHero = styled.div`
-  ${tw`flex flex-col lg:flex-row items-center mt-8`};
-
-`
-const AboutSub = styled.span`
-  ${tw`text-white pt-12 lg:pt-0 lg:pl-12 text-2xl lg:text-3xl xl:text-4xl`};
+ export const Links = styled.div`
+display:flex;
+justify-content:space-between;
+width:170px;
 `
 
-const AboutDesc = styled.p`
+export const AboutDesc = styled.p`
   ${tw`text-grey-light text-lg md:text-xl lg:text-2xl font-sans pt-6 md:pt-12 text-justify`};
 `
 
@@ -46,17 +43,15 @@ const ProjectsWrapper = styled.div`
     grid-gap: 2rem;
   }
 `
-const ScreenShot = styled.img`
+export const ScreenShot = styled.img`
   ${tw` w-99 xl:w-99 shadow-lg h-100%`};
   border-radius:5px;
 `
-const ScreenShotWrap = styled.div`
-border:40px solid inherit;
-`
-const TechItem = styled.li`
+
+export const TechItem = styled.li`
 margin:5px 0;
 `
-
+const screenShots = [landing,how,where,prices]
 const footprint = () =>{
     return(
         <>
@@ -64,10 +59,13 @@ const footprint = () =>{
             <Parallax  pages={4}>
                 <Hero offset={0}>
                 <BigTitle>
-                    <a href="https://foot-print.net/">
                     Footprint
-                    </a>
                 </BigTitle>
+                <Links>
+                    <a href="https://foot-print.net">VIEW LIVE</a>
+                    <a href="https://github.com/Csteves/Footprint">GITHUB</a>
+                </Links>
+
                 <Subtitle>For this project I wanted to contribute to someting that was meaningfull to me. Having worked in the recycling industry, I realized that proper recyling information is not very abundant. So I decided to make a web application that would provide the proper information to users.</Subtitle>
                 </Hero>
                 <About offset={1}>
@@ -104,30 +102,15 @@ const footprint = () =>{
                     <TechItem>
                         Parsed RSS feeds for recyling related news articles.
                     </TechItem>
-
                 </ul>
-
                  </AboutDesc>
                 </About>
             <Projects offset={2}>
                 <Title>Screen Shots</Title>
                 <ProjectsWrapper>
-                <ScreenShotWrap>
-                    <ScreenShot src={landing} alt="screen shot"></ScreenShot>
-                </ScreenShotWrap>
-
-
-                <ScreenShot src={how} alt="screen shot"></ScreenShot>
-
-                <ScreenShot src={where} alt="screen shot"></ScreenShot>
-
-                <ScreenShot src={prices} alt="screen shot"></ScreenShot>
-
+                    <Slider images={screenShots}/>
                 </ProjectsWrapper>
 
-            </Projects>
-            <Projects offset={3}>
-                <h1>bottom</h1>
             </Projects>
             </Parallax>
         </>
