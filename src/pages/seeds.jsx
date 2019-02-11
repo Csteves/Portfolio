@@ -8,6 +8,11 @@ import Layout from '../components/Layout'
 import Hero from '../views/Foot'
 import Projects from '../views/Projects'
 import Slider from '../components/Slider';
+import landing from '../images/seeds-landing.png'
+import project from '../images/seeds-projects.png'
+import weather from '../images/dash-weather.png'
+import news from '../images/dash-news.png'
+import modal from '../images/seeds-modal.png'
 
 import {Links,AboutDesc,TechItem} from './footprint'
 import { Title, Subtitle } from '../elements/Titles'
@@ -33,7 +38,7 @@ const ProjectsWrapper = styled.div`
   }
 `
 
-const screenShots = [1,2,3,4]
+const screenShots = [landing,project,weather,news,modal]
 const footprint = () =>{
     return(
         <>
@@ -44,7 +49,7 @@ const footprint = () =>{
                     Seeds Of Success
                 </BigTitle>
                     <Links>
-                    <a href="https://foot-print.net">VIEW LIVE</a>
+                    <a href="https://seedsofsuccess.foot-print.net">VIEW LIVE</a>
                     <a href="https://github.com/seeds-of-success-1/seeds-of-success">GITHUB</a>
                 </Links>
                 <Subtitle>Garden planning application allowing users to design gardens and specify which type of plants they would like to plant while providing gardening related information for each of the provided plant species.</Subtitle>
