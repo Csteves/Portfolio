@@ -79,10 +79,6 @@ const footprint = () =>{
                     </TechItem>
 
                     <TechItem>
-                        Integrated Google Maps and Google Geocoding API's pared with recycling information to allow users to find recycling locations accepting specified materials near them.
-                    </TechItem>
-
-                    <TechItem>
                         Modulized styles by using Styled Components
                     </TechItem>
 
