@@ -159,7 +159,6 @@ class Index extends Component {
     return(
       <>
       <Layout/>
-
       <NavToolbar>
           <Bar>
         <NavButton
@@ -202,7 +201,7 @@ class Index extends Component {
             </AboutSub>
           </AboutHero>
           <AboutDesc id='about'>
-          I got introduced to software out of curiosity, shortly after that I realized that I was completely intrigued by software. As a result, I took a chance to further develop myself in this area and made a major change in my life to pursue coding. I left my fulltime job of 13 years to attend DevMountain, an immersive web development boot camp. I’m constantly striving to learn new things and improve in this area. With my free time, I enjoy tinkering with new technologies and reading industry related news, blogs, or books.
+          I got introduced to software out of curiosity, shortly after that I realized that I was completely intrigued by software. As a result, I took a chance to further develop myself in this area and made a major change in my life to pursue coding. I left my fulltime job of 13 years in order to pursue my passion for software. It has been a great decision and a wonderful experience thus far. If you would like to see what I do in my free time, view either one of my hosted projects below or visit my <a href="https://github.com/Csteves">Github</a> for all my doings.
           </AboutDesc>
         </About>
 
