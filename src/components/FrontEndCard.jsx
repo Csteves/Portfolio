@@ -9,7 +9,7 @@ import html from '../../static/icons/html-5.svg'
 import react from '../../static/icons/React.js.svg'
 import redux from '../../static/icons/redux.svg'
 import gatsby from '../../static/icons/gatsby.svg'
-import styledComp from '../../static/icons/Styled.png'
+import typescript from '../../static/icons/typescript.svg';
 
 
 const Wrapper = styled.div`
@@ -79,7 +79,7 @@ const FrontEndCard = ({ title, link, children, bg }) => (
             <Skill src={gatsby}/>
         </SkillWrap>
         <SkillWrap>
-            <StyledComp src={styledComp}/>
+            <StyledComp src={typescript}/>
         </SkillWrap>
         <SkillWrap>
             <Skill src={html}/>

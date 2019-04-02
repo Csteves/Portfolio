@@ -201,7 +201,7 @@ class Index extends Component {
             </AboutSub>
           </AboutHero>
           <AboutDesc id='about'>
-          I got introduced to software out of curiosity, shortly after that I realized that I was completely intrigued by software. As a result, I took a chance to further develop myself in this area and made a major change in my life to pursue coding. I left my fulltime job of 13 years in order to pursue my passion for software. It has been a great decision and a wonderful experience thus far. If you would like to see what I do in my free time, view either one of my hosted projects below or visit my <a href="https://github.com/Csteves">Github</a> for all my doings.
+           If you would like to see what I do for fun, view either one of my hosted <a href='' onClick={() => this.parallax.scrollTo(2.5)} >projects</a> below or visit my <a href="https://github.com/Csteves">Github</a> for all my doings.
           </AboutDesc>
         </About>
 
@@ -214,6 +214,7 @@ class Index extends Component {
               bg="linear-gradient(to right, #f5f7fa 0%, #c3cfe2 100%)"
               logo={recycle}
               color={'#e07628'}
+              site={'https://foot-print.net'}
               >
                 A Recyling Information Web Application.
             </ProjectCard>
@@ -223,6 +224,7 @@ class Index extends Component {
               bg="linear-gradient(to top, #c1dfc4 0%, #deecdd 100%)"
               logo={garden}
               color={'#558B2F'}
+              site={'https://seedsofsuccess.foot-print.net'}
               >
                 <p>
                   Seeds Of Success
@@ -241,13 +243,14 @@ class Index extends Component {
             title='Front-end Development'
             bg="linear-gradient(to right, #232526 0%, #414345 100%)"
             >
-            I take pride in building front-end applications and websites. I love JavaScript and specialize in React with Redux. I have been using Gatsby along with Styled Components to build template sites, also know HTML5 and CSS3.
+            I love creating interactive UI's with Javascript or Typescript, HTMl, and CSS. My library of choice is React.js with Redux to create reusable UI compontents and manage client state. Also familiar with Gatsby.js and Styled Components.
             </FrontEndCard>
             <BackEndCard
             title='Back-end Development'
             bg="linear-gradient(to right, #8e9eab 0%, #eef2f3 100%)"
             >
-            Experienced in Node.js environments. Commonly using Express, PostgreSQL, Massive, RESTful APIs, and authentication. I also incorporate unit and endpoint testing along with version control, using Git, Jest, and Postman.
+            {/* Add GraphQL logo */}
+            Experienced with Node.js environments, commonly using Express, PostgreSQL, Massive, GraphQL, RESTful or GraphQL APIs, and authentication. For unit testing, endpoint testing and version control I use Jest, Postman, and Git.
             </BackEndCard>
           </SkillsHero>
         </Skills>
